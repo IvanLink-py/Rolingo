@@ -876,7 +876,7 @@ class MainWindow(QMainWindow):
             btn = QPushButton(label)
             btn.setFixedHeight(40)
             btn.setStyleSheet(
-                "QPushButton { text-align: left; padding-left: 16px; border: none; background: transparent; font-size: 13px; }"
+                "QPushButton { text-align: left; padding-left: 16px; border: none; background: transparent; font-size: 13px; color: black; }"
                 "QPushButton:hover { background: #e0e0e0; }"
                 "QPushButton[active=true] { background: #dce6f5; color: #0078d4; font-weight: bold; }"
             )
@@ -1004,9 +1004,25 @@ class MainWindow(QMainWindow):
 
 # ── ENTRY POINT ───────────────────────────────────────────────────────────────
 
+APP_STYLE = """
+    QComboBox {
+        background-color: white;
+        color: black;
+    }
+    QComboBox QAbstractItemView {
+        background-color: white;
+        color: black;
+    }
+    QPushButton#navBtn {
+        background-color: white;
+        color: black;
+    }
+"""
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
+    app.setStyleSheet(APP_STYLE)
     app.setApplicationName("Rolingo")
 
     palette = QPalette()
