@@ -41,7 +41,7 @@ class ScenarioService:
 
         scenarios_query = f"""
             SELECT id, title, description, language, dialog_type, goal, 
-                   character_name, character_role, age_group, min_level
+                   character_name, character_role, character_traits, age_group, min_level
             FROM scenarios {where_clause}
             ORDER BY title
             LIMIT ${param_num} OFFSET ${param_num + 1}
